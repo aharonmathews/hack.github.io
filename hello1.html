@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>
+		How to Drag and Drop Images using HTML5 ?
+	</title>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img id="logo" src="logo2.png" alt="">
+	<h1>EMMAWUSS</h1>
+    <center>
+    <div id = "size">200 x 100</div>
+    <table id = "div1">
+        <tr>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+        </tr>
+        <tr>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+        </tr>
+    </table>
+    </center>
+
+    <div id = "leftbar">
+
+    </div>
+
+    <div id="nameleftbar">
+        Crops
+    </div>
+
+    <div class="container" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+	<br>
+	
+	<img id="drag1" class="img" src="broccoli.jpeg" draggable="true" ondragstart="drag(event)" width="336" height="69" title="Brocolli">
+    <img id="drag2" class="img" src="carrot.jpeg" draggable="true" ondragstart="drag(event)" width="336" height="69" title="Carrot">
+    <br>
+    <img id="drag3" class="img" src="tomato.jpeg" draggable="true" ondragstart="drag(event)" width="336" height="69" title="Tomato">
+    <img id="drag4" class="img" src="corn.webp" draggable="true" ondragstart="drag(event)" width="336" height="69" title="Corn">
+    <br>
+    <img id="drag5" class="img" src="rice.webp" draggable="true" ondragstart="drag(event)" width="336" height="69" title="Rice">
+    <img id="drag6" class="img" src="mango.jpeg" draggable="true" ondragstart="drag(event)" width="336" height="69" title="Mango">
+    <br>
+    <img id="drag7" class="img" src="banana.jpeg" draggable="true" ondragstart="drag(event)" width="336" height="69" title="Banana">
+    <img id="drag8" class="img" src="Pineapple.jpeg" draggable="true" ondragstart="drag(event)" width="336" height="69" title="Pinepple">
+    
+    <div id = "rating">Rating = 65</div>
+
+	<script>
+		function allowDrop(ev) {
+			ev.preventDefault();
+		}
+
+		function drag(ev) {
+			ev.dataTransfer.setData("text", ev.target.id);
+		}
+
+		function drop(ev) {
+			ev.preventDefault();
+			var data = ev.dataTransfer.getData("text");
+			ev.target.appendChild(document.getElementById(data));
+		}
+
+        function myFunction(x) {
+        x.classList.toggle("change");
+        }
+	</script>
+</body>
+
+</html>

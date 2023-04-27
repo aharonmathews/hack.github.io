@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+  
+<head>
+    <title>
+        How to Drag and Drop Images using HTML5 ?
+    </title>
+  
+    <link rel="stylesheet" href="style.css">
+</head>
+  
+<body>
+    <p>
+        Drag the GeeksforGeeks image 
+        into the rectangle:
+    </p>
+    <center>
+    <div id="droprec" ondrop="drop(event)" ondragover="allowDrop(event)">
+    </div>
+    </center>
+    <br>
+      
+    <img id="img1" src="broccoli.jpeg" draggable="true" ondragstart="drag(event)" width="336" height="69">
+  
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+  
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</body>
+  
+</html>

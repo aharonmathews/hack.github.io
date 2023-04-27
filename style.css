@@ -1,0 +1,155 @@
+.pic {
+    height : 100px;
+
+}
+#logo{
+  position : absolute;
+  right:50px;
+  height : 50px;
+  width : 200px;
+  top : 26px;
+
+}
+
+#div1 {
+    width: 100px;
+    height: 50px;
+    padding: 3px;
+    border: 1px solid #232121;
+    
+}
+
+#nameleftbar {
+  position : absolute;
+  top :0px;
+  left :70px;
+  font-size : 35px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+#leftbar {
+  position : absolute;
+  height : 700px;
+  width : 250px;
+  top : 50px;
+  background-color: yellow;
+  z-index : -1;
+}
+
+#size {
+  position :absolute;
+  top : 170px;
+  left : 685px;
+  font-family : sans-serif;
+}
+
+#img1 {
+    width : 100px;
+    height : 50px;
+}
+
+.img{
+    width :100px;
+    height : 60px;
+    position :relative;
+    left : 30px;
+}
+
+#drag2{
+
+}
+
+h1{
+  right : 50px;
+  position : absolute;
+}
+
+table, th, td {
+    
+    border:1px solid black;
+    padding : 50px;
+  }
+
+table {
+  width:fit-content;
+  position : relative;
+  height : fit-content;
+  top : 200px;
+  margin : 0 auto;
+  border-collapse : collapse;
+  background-color: rgb(126, 170, 126);
+
+}
+
+tr {
+  width:fit-content;
+    height : 50px;
+    
+}
+
+#rating {
+  right : 200px;
+  font-family :'Times New Roman', Times, serif;
+  position : absolute;
+}
+
+.container {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 100px;
+  }
+
+  
+  .draggable {
+    width: 80px;
+    height: 80px;
+    cursor: move;
+  }
+  
+  .draggable:active {
+    opacity: 0.5;
+  }
+
+  .mwimg {
+    z-index : 1;
+    position : relative;
+  }
+  
+  .website {
+    position : absolute;
+    top : 3300px;
+    bottom : auto;
+    left : 1000px;
+    color : darkgreen;
+    font-size : 30px;
+    font-family :Verdana, Geneva, Tahoma, sans-serif;
+    z-index : 2;
+  }
+
+  .container {
+    display: inline-block;
+    cursor: pointer;
+    position:absolute;
+    left: 30px;
+    top : 10px;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }

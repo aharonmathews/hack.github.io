@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Google Images</title>
+        <link rel="icon" href="google front icon.png" type="image/x-icon">
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+              <img src="broccoli.jpeg" class="draggable" />
+              <img src="image2.jpg" class="draggable" />
+              <img src="image3.jpg" class="draggable" />
+            </div>
+            <div class="plot">
+              <div class="dropzone"></div>
+            </div>
+          </div>
+
+          <script>
+                const draggables = document.querySelectorAll('.draggable');
+                const sidebar = document.querySelector('.sidebar');
+                const plot = document.querySelector('.plot');
+                const dropzone = document.querySelector('.dropzone');
+
+                draggables.forEach(draggable => {
+                draggable.addEventListener('dragstart', () => {
+                    draggable.classList.add('dragging');
+                });
+
+                draggable.addEventListener('dragend', () => {
+                    draggable.classList.remove('dragging');
+                });
+                });
+
+                dropzone.addEventListener('dragover', event => {
+                event.preventDefault();
+                });
+                
+                dropzone.addEventListener('drop', event => {
+                event.preventDefault();
+                const draggable = document.querySelector('.dragging');
+                if (draggable) {
+                    dropzone.appendChild(draggable);
+                }
+                });
+
+                plot.addEventListener('dragover', event => {
+                event.preventDefault();
+                });
+
+                plot.addEventListener('drop', event => {
+                event.preventDefault();
+                const draggable = document.querySelector('.dragging');
+                if (draggable) {
+                    sidebar.appendChild(draggable);
+                }
+                });
+
+          </script>
+    </body>
+</html>
+
+
